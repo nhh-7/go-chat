@@ -1,0 +1,11 @@
+{"level":"fatal","ts":"2025-08-25T22:53:54.347+0800","msg":"Error 1049 (42000): Unknown database 'go-chat'","func":"dao.init.0","file":"/home/hhn/WorkSpace/go-chat/internal/dao/gorm.go","line":26}
+{"level":"fatal","ts":"2025-08-25T22:54:59.866+0800","msg":"Error 1049 (42000): Unknown database 'kama_char_server'","func":"dao.init.0","file":"/home/hhn/WorkSpace/go-chat/internal/dao/gorm.go","line":26}
+{"level":"fatal","ts":"2025-08-25T23:12:20.389+0800","msg":"Error 1049 (42000): Unknown database 'kama_chat_server'","func":"dao.init.0","file":"/home/hhn/WorkSpace/go-chat/internal/dao/gorm.go","line":26}
+{"level":"error","ts":"2025-08-25T23:46:03.206+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-25T23:47:27.413+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:06:27.593+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:06:58.668+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:11:22.073+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:12:00.397+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:12:17.774+0800","msg":"用户不存在","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":28}
+{"level":"error","ts":"2025-08-26T00:17:54.784+0800","msg":"密码错误，请重新输入","func":"gorm.(*userInfoService).Login","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":36}

@@ -5,7 +5,7 @@ port = 8000
 
 [mysqlConfig]
 host = "127.0.0.1"
-port = 3307
+port = 3306
 user = "root"
 password = "123456"
 databaseName = "kama_chat_server"
@@ -23,7 +23,7 @@ signName = "阿里云短信测试"
 templateCode = "SMS_154950909"
 
 [logConfig]
-logPath = "/home/hhn/WorkSpace/go-chat/logs"
+logPath = "/home/hhn/WorkSpace/go-chat/logs/"
 
 [kafkaConfig]
 messageMode = "channel"# 消息模式 channel or kafka

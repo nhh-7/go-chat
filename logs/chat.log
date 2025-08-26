@@ -1,0 +1,9 @@
+{"level":"fatal","ts":"2025-08-26T22:56:02.796+0800","msg":"driver: bad connection","func":"dao.init.0","file":"/home/hhn/WorkSpace/go-chat/internal/dao/gorm.go","line":26}
+{"level":"error","ts":"2025-08-26T23:07:10.095+0800","msg":"invalid character '\"' after object key:value pair","func":"v1.Register","file":"/home/hhn/WorkSpace/go-chat/api/v1/user_info_controller.go","line":31}
+{"level":"error","ts":"2025-08-26T23:08:45.719+0800","msg":"invalid character '\"' after object key:value pair","func":"v1.Register","file":"/home/hhn/WorkSpace/go-chat/api/v1/user_info_controller.go","line":32}
+{"level":"info","ts":"2025-08-26T23:09:48.628+0800","msg":"手机号不存在，可以注册","tel:":"17353611452","func":"gorm.(*userInfoService).checkTelephoneExist","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":108}
+{"level":"info","ts":"2025-08-26T23:10:51.367+0800","msg":"手机号已存在，无法注册","func":"gorm.(*userInfoService).checkTelephoneExist","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":114}
+{"level":"info","ts":"2025-08-26T23:10:57.243+0800","msg":"验证码错误，请重新输入","func":"gorm.(*userInfoService).Register","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":64}
+{"level":"error","ts":"2025-08-26T23:45:14.997+0800","msg":"invalid character '\"' after object key:value pair","func":"v1.UpdateUserInfo","file":"/home/hhn/WorkSpace/go-chat/api/v1/user_info_controller.go","line":46}
+{"level":"error","ts":"2025-08-26T23:45:42.337+0800","msg":"invalid character '}' looking for beginning of object key string","func":"v1.UpdateUserInfo","file":"/home/hhn/WorkSpace/go-chat/api/v1/user_info_controller.go","line":46}
+{"level":"error","ts":"2025-08-26T23:49:31.808+0800","msg":"record not found","func":"gorm.(*userInfoService).UpdateUserInfo","file":"/home/hhn/WorkSpace/go-chat/internal/service/gorm/user_info_service.go","line":107}

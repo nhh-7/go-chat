@@ -16,4 +16,7 @@ func init() {
 	corsConfig.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
 	GE.Use(cors.New(corsConfig))
 	GE.POST("/login", v1.Login)
+	GE.POST("/register", v1.Register)
+	GE.POST("/user/updateUserInfo", v1.UpdateUserInfo)
+
 }

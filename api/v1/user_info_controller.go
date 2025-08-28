@@ -53,3 +53,17 @@ func UpdateUserInfo(c *gin.Context) {
 	message, ret := gorm.UserInfoService.UpdateUserInfo(updateUserInfoReq)
 	JsonBack(c, message, ret, nil)
 }
+
+func GetUserInfo(c *gin.Context) {
+	var req request.GetUserInfoRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, userinfo, ret := gorm.UserInfoService.GetUserInfo(req.Uuid)
+	JsonBack(c, message, ret, userinfo)
+}

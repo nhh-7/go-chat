@@ -129,6 +129,28 @@ func (u *userInfoService) UpdateUserInfo(updateUserInfoReq request.UpdateUserInf
 	return "用户信息更新成功", 0
 }
 
+func (u *userInfoService) GetUserInfo(uuid string) (string, *respond.GetUserInfoRespond, int) {
+	var user model.UserInfo
+	if res := dao.GormDB.Where("uuid = ?", uuid).Find(&user); res.Error != nil {
+		zlog.Error(res.Error.Error())
+		return constants.SYSTEM_ERROR, nil, -1
+	}
+	rsp := respond.GetUserInfoRespond{
+		Uuid:      user.Uuid,
+		Telephone: user.Telephone,
+		Nickname:  user.Nickname,
+		Avatar:    user.Avatar,
+		Birthday:  user.Birthday,
+		Email:     user.Email,
+		Gender:    user.Gender,
+		Signature: user.Signature,
+		CreatedAt: user.CreatedAt.Format("2006-01-02 15:04:05"),
+		IsAdmin:   user.IsAdmin,
+		Status:    user.Status,
+	}
+	return "获取用户信息成功", &rsp, 0
+}
+
 func (u *userInfoService) checkTelephoneExist(telephone string) (string, int) {
 	var user model.UserInfo
 	if res := dao.GormDB.Where("telephone = ?", telephone).First(&user); res.Error != nil {

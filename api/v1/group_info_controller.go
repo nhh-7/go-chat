@@ -94,3 +94,59 @@ func DismissGroup(c *gin.Context) {
 	message, ret := gorm.GroupInfoService.DismissGroup(req.OwnerId, req.GroupId)
 	JsonBack(c, message, ret, nil)
 }
+
+func GetGroupInfo(c *gin.Context) {
+	var req request.GetGroupInfoRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, groupInfo, ret := gorm.GroupInfoService.GetGroupInfo(req.GroupId)
+	JsonBack(c, message, ret, groupInfo)
+}
+
+func UpdateGroupInfo(c *gin.Context) {
+	var req request.UpdateGroupInfoRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.GroupInfoService.UpdateGroupInfo(req)
+	JsonBack(c, message, ret, nil)
+}
+
+func GetGroupMemberList(c *gin.Context) {
+	var req request.GetGroupMemberListRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, groupMemberList, ret := gorm.GroupInfoService.GetGroupMemberList(req.GroupId)
+	JsonBack(c, message, ret, groupMemberList)
+}
+
+func RemoveGroupMembers(c *gin.Context) {
+	var req request.RemoveGroupMembersRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.GroupInfoService.RemoveGroupMembers(req)
+	JsonBack(c, message, ret, nil)
+}

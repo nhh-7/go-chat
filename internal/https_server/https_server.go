@@ -27,4 +27,8 @@ func init() {
 	GE.POST("/group/enterGroupDirectly", v1.EnterGroupDirectly)
 	GE.POST("/group/leaveGroup", v1.LeaveGroup)
 	GE.POST("/group/dismissGroup", v1.DismissGroup)
+	GE.POST("/group/getGroupInfo", v1.GetGroupInfo)
+	GE.POST("/group/updateGroupInfo", v1.UpdateGroupInfo)
+	GE.POST("/group/getGroupMemberList", v1.GetGroupMemberList)
+	GE.POST("/group/removeGroupMembers", v1.RemoveGroupMembers)
 }

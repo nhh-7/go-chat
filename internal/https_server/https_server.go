@@ -31,4 +31,42 @@ func init() {
 	GE.POST("/group/updateGroupInfo", v1.UpdateGroupInfo)
 	GE.POST("/group/getGroupMemberList", v1.GetGroupMemberList)
 	GE.POST("/group/removeGroupMembers", v1.RemoveGroupMembers)
+
+	GE.POST("/contact/getUserList", v1.GetUserList)
+	GE.POST("/contact/loadMyJoinedGroup", v1.LoadMyJoinedGroup)
+	GE.POST("/contact/getContactInfo", v1.GetContactInfo)
+	GE.POST("/contact/deleteContact", v1.DeleteContact)
+	GE.POST("/contact/applyContact", v1.ApplyContact)
+	GE.POST("/contact/getNewContactList", v1.GetNewContactList)
+	GE.POST("/contact/passContactApply", v1.PassContactApply)
+	GE.POST("/contact/blackContact", v1.BlackContact)
+	GE.POST("/contact/cancelBlackContact", v1.CancelBlackContact)
+	GE.POST("/contact/getAddGroupList", v1.GetAddGroupList)
+	GE.POST("/contact/refuseContactApply", v1.RefuseContactApply)
+	GE.POST("/contact/blackApply", v1.BlackApply)
+
+	GE.POST("/session/openSession", v1.OpenSession)
+	GE.POST("/session/getUserSessionList", v1.GetUserSessionList)
+	GE.POST("/session/getGroupSessionList", v1.GetGroupSessionList)
+	GE.POST("/session/deleteSession", v1.DeleteSession)
+	GE.POST("/session/checkOpenSessionAllowed", v1.CheckOpenSessionAllowed)
+
+	GE.POST("/message/getMessageList", v1.GetMessageList)
+	GE.POST("/message/getGroupMessageList", v1.GetGroupMessageList)
+
+	GE.POST("/user/getUserInfoList", v1.GetUserInfoList)
+	GE.POST("/user/ableUsers", v1.AbleUsers)
+	GE.POST("/user/disableUsers", v1.DisableUsers)
+	GE.POST("/user/deleteUsers", v1.DeleteUsers)
+	GE.POST("/user/setAdmin", v1.SetAdmin)
+	GE.POST("/group/getGroupInfoList", v1.GetGroupInfoList)
+	GE.POST("/group/deleteGroups", v1.DeleteGroups)
+	GE.POST("/group/setGroupsStatus", v1.SetGroupsStatus)
+
+	GE.POST("/message/uploadAvatar", v1.UploadAvatar)
+	GE.POST("/message/uploadFile", v1.UploadFile)
+
+	GE.GET("/wss", v1.WsLogin)
+	GE.POST("/user/wsLogout", v1.WsLogout)
+
 }

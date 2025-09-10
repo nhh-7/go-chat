@@ -67,3 +67,73 @@ func GetUserInfo(c *gin.Context) {
 	message, userinfo, ret := gorm.UserInfoService.GetUserInfo(req.Uuid)
 	JsonBack(c, message, ret, userinfo)
 }
+
+func GetUserInfoList(c *gin.Context) {
+	var req request.GetUserInfoListRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, userList, ret := gorm.UserInfoService.GetUserInfoList(req.OwnerId)
+	JsonBack(c, message, ret, userList)
+}
+
+func AbleUsers(c *gin.Context) {
+	var req request.AbleUsersRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.UserInfoService.AbleUsers(req.UuidList)
+	JsonBack(c, message, ret, nil)
+}
+
+func DisableUsers(c *gin.Context) {
+	var req request.AbleUsersRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.UserInfoService.DisableUsers(req.UuidList)
+	JsonBack(c, message, ret, nil)
+}
+
+func DeleteUsers(c *gin.Context) {
+	var req request.AbleUsersRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.UserInfoService.DeleteUsers(req.UuidList)
+	JsonBack(c, message, ret, nil)
+}
+
+func SetAdmin(c *gin.Context) {
+	var req request.AbleUsersRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.UserInfoService.SetAdmin(req.UuidList, req.IsAdmin)
+	JsonBack(c, message, ret, nil)
+}

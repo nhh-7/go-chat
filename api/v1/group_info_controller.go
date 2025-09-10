@@ -150,3 +150,36 @@ func RemoveGroupMembers(c *gin.Context) {
 	message, ret := gorm.GroupInfoService.RemoveGroupMembers(req)
 	JsonBack(c, message, ret, nil)
 }
+
+func GetGroupInfoList(c *gin.Context) {
+	message, groupList, ret := gorm.GroupInfoService.GetGroupInfoList()
+	JsonBack(c, message, ret, groupList)
+}
+
+func DeleteGroups(c *gin.Context) {
+	var req request.DeleteGroupsRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.GroupInfoService.DeleteGroups(req.UuidList)
+	JsonBack(c, message, ret, nil)
+}
+
+func SetGroupsStatus(c *gin.Context) {
+	var req request.SetGroupsStatusRequest
+	if err := c.BindJSON(&req); err != nil {
+		zlog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code":    500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.GroupInfoService.SetGroupsStatus(req.UuidList, req.Status)
+	JsonBack(c, message, ret, nil)
+}

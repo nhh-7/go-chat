@@ -17,7 +17,7 @@ type kafkaService struct {
 	KafkaConn  *kafka.Conn
 }
 
-var Kafkaservice = new(kafkaService)
+var KafkaService = new(kafkaService)
 
 func (k *kafkaService) KafkaInit() {
 	kafkaConfig := config.GetConfig().KafkaConfig
